@@ -35,8 +35,8 @@ const Formulario = () => {
       alignItems="center"
       justifyContent="center"
     >
-      <Box border="2px solid red" w="500px" p="10px" rounded={10}>
-        <Text>Formulário de inscrição</Text>
+      <Box border="2px solid red" w="500px" p="30px" rounded={10}>
+        <Text textAlign="center">Formulário de inscrição</Text>
         <form
           onSubmit={handleSubmit}
           style={{ display: "flex", flexDirection: "column", height: "100%" }}
@@ -57,7 +57,7 @@ const Formulario = () => {
               />
             </FormControl>
           </VStack>
-          <Box mt="auto" display="flex" justifyContent="center">
+          <Box mt="25px" display="flex" justifyContent="center">
             <Button colorScheme="teal" type="submit">
               Enviar
             </Button>

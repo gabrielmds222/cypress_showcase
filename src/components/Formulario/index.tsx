@@ -46,6 +46,10 @@ const Formulario = () => {
         >
           <VStack spacing={4} flex="1">
             <FormControl mb="25px">
+              <FormLabel>Nome</FormLabel>
+              <Input type="text" id="Nome" />
+            </FormControl>
+            <FormControl mb="25px">
               <FormLabel>Email</FormLabel>
               <Input
                 type="email"
@@ -56,7 +60,14 @@ const Formulario = () => {
               <FormLabel>Senha</FormLabel>
               <Input
                 type="password"
-                onChange={(event) => setSenha(event.target.value)}
+                onChange={(event) => {
+                  setSenha(event.target.value), console.log(senha.length);
+                }}
+                border={
+                  senha.length == 0 || senha.length >= 8
+                    ? "1px solid #e6e3e3"
+                    : "1px solid red"
+                }
               />
             </FormControl>
           </VStack>

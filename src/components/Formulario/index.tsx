@@ -8,6 +8,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
+import Botao from "../Button";
 
 const Formulario = () => {
   const [email, setEmail] = useState("");
@@ -35,21 +36,23 @@ const Formulario = () => {
       alignItems="center"
       justifyContent="center"
     >
-      <Box border="2px solid red" w="500px" p="30px" rounded={10}>
-        <Text textAlign="center">Formulário de inscrição</Text>
+      <Box border="2px solid #e6e3e3" w="500px" p="30px" rounded={10}>
+        <Text textAlign="center" mb="25px">
+          Formulário de inscrição
+        </Text>
         <form
           onSubmit={handleSubmit}
           style={{ display: "flex", flexDirection: "column", height: "100%" }}
         >
           <VStack spacing={4} flex="1">
-            <FormControl>
+            <FormControl mb="25px">
               <FormLabel>Email</FormLabel>
               <Input
                 type="email"
                 onChange={(event) => setEmail(event.target.value)}
               />
             </FormControl>
-            <FormControl>
+            <FormControl mb="25px">
               <FormLabel>Senha</FormLabel>
               <Input
                 type="password"
@@ -61,6 +64,7 @@ const Formulario = () => {
             <Button colorScheme="teal" type="submit">
               Enviar
             </Button>
+            <Botao />
           </Box>
         </form>
       </Box>

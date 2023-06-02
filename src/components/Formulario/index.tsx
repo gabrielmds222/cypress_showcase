@@ -7,12 +7,24 @@ import {
   VStack,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 
 const Formulario = () => {
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Lógica para lidar com o envio do formulário
+
+    if (!email && !senha) {
+      alert("Por favor, preencha o email e a senha.");
+    } else if (!email) {
+      alert("Por favor, preencha o email.");
+    } else if (!senha) {
+      alert("Por favor, preencha a senha.");
+    } else {
+      alert("parabens");
+    }
   };
 
   return (
@@ -32,11 +44,17 @@ const Formulario = () => {
           <VStack spacing={4} flex="1">
             <FormControl>
               <FormLabel>Email</FormLabel>
-              <Input type="email" required />
+              <Input
+                type="email"
+                onChange={(event) => setEmail(event.target.value)}
+              />
             </FormControl>
             <FormControl>
               <FormLabel>Senha</FormLabel>
-              <Input type="password" required />
+              <Input
+                type="password"
+                onChange={(event) => setSenha(event.target.value)}
+              />
             </FormControl>
           </VStack>
           <Box mt="auto" display="flex" justifyContent="center">
